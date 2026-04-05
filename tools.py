@@ -22,7 +22,7 @@ def list_directory(path: str = ".") -> str:
     return "\n".join(entries)
 
 def run_shell(command: str) -> str:
-    """シェルコマンドを実行する（サンドボックス内）"""
+    """シェルコマンドを実行する（VM上で直接実行、Podman隔離なし）"""
     result = subprocess.run(
         command, shell=True, capture_output=True,
         text=True, timeout=30
